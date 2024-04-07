@@ -1,38 +1,174 @@
-.App {
-  text-align: center;
+.containerHomePage {
+  background-image: url('./assets/registerbackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; 
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.loginContainer, .registerContainer {
+  background-image: url('./assets/registerbackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; 
+}
+.formContainer{
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+   height: auto;
+   width:90%;
+   max-width: 450px;
+   background-color: rgba(203, 203, 212, 0.864);
+   display:flex;
+   flex-direction: column;
+   align-items: center;
+}
+.formDetails{
+  display:flex;
+   flex-direction: column;
+
+}
+.createAccoutTitle{
+  color: #000;
+  font-weight: 600;
+  font-size: 35px;
+  margin:50px 0px;
+}
+.PasswordEmailContainer{
+  margin-top: 35px;
+  display:flex;
+  flex-direction: column;
+}
+.navbar{
+  background-color:#08073b;
+  font-size: 30px;
+  height: 8vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.itemNavbar{
+  color:aliceblue;
+  margin: 0px 25px;
+  text-decoration: none;
+}
+.itemNavbar:active{
+  color:rgb(167, 18, 147);
+}
+.containerFormDaysOff{
+  background-image: url('./assets/registerbackground.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; 
+}
+.formDaysOff{
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+   height: 50vh;
+   width:70%;
+   max-width: 950px;
+   background-color: #08073b;
+   display:flex;
+   flex-direction: column;
+   justify-content: start;
+   align-items: start;
+   padding:50px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.dataPicker{
+  background-color: white;
+  width:18vw;
+}
+input[type=text] {
+  border: none;
+  border-bottom: 2px solid rgb(95, 188, 238);
+  width:18vw;
+  height:4vh;
+  color:#000
+}
+.itemDaysOffForm{
+  display:flex;
+  flex-direction: column;
+  margin: 1rem;
+ 
+
+}
+label{
+  margin-bottom: 0.8rem;
+  margin-left: 1rem;
+  align-self: start;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+.bucket2Elements{
+   display: flex;
+   
+}
+.buttontextarea{
+  width:100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  margin:1rem;
+}
+.leftitem{
+  margin-left: 4.5rem;
 }
 
-.App-link {
-  color: #61dafb;
-}
+@media screen and (max-width: 600px){
+  
+  .formContainer{
+    box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+     width: 70%;
+     background-color: rgba(203, 203, 212, 0.864);
+     display:flex;
+     height:70vh;
+     flex-direction: column;
+     align-items: center;
+  }
+  .navbar{
+    background-color:#040f38;
+    font-size: 10px;
+    height: 8vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
   }
-  to {
-    transform: rotate(360deg);
+  .itemNavbar{
+
+    margin: 2px 0px;
+    
   }
+  .createAccoutTitle{
+    font-size: 20px;
+    margin:15px 0px;
+  }
+  .navbar{
+    font-size: 15px;
+    height:10vh;
+  }
+  .PasswordEmailContainer{
+    margin-top: 10px;
+
+  }
+
+ 
+
 }
