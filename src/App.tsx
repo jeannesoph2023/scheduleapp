@@ -6,6 +6,7 @@ import FormPage from './pages/FormPage';
 import Home from './pages/Home';
 import Navbar from './components/Navbar';
 import DaysOffUser from './pages/DaysOffUser';
+import PDFGenerator from './components/PDFGenerator';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/form" element={<FormPage />}/>
         <Route path="/daysoff" element={<DaysOffUser />}/>
       </Routes>
+
       
     </Router>
   )

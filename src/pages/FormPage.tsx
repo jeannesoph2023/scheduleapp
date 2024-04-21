@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import ThumbDownOffAltIcon from '@mui/icons-material/ThumbDownOffAlt';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
@@ -8,11 +8,14 @@ import "../App.css"
 import { DatePicker} from '@mui/x-date-pickers/DatePicker'
 import { LocalizationProvider } from '@mui/x-date-pickers'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment';
-import { Button, ButtonProps, styled } from '@mui/material';
+import { Button, ButtonProps, styled, useMediaQuery } from '@mui/material';
 import { purple } from '@mui/material/colors';
 import { Moment } from 'moment';
 import moment from 'moment';
 import axios from 'axios';
+import { useSelector } from 'react-redux';
+import { store } from '../store/store';
+import { adminID } from './DaysOffUser';
 const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
   color: theme.palette.getContrastText(purple[500]),
   backgroundColor: purple[500],
@@ -20,6 +23,14 @@ const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
     backgroundColor: purple[700],
   },
 }));
+
+interface UserData {
+  email:string;
+  _id:string;
+  username:string;
+}
+
+
 
 const FormPage = () => {
  
@@ -31,12 +42,12 @@ const FormPage = () => {
   const [ departureday, setDepartureDay] = useState<Moment | null>(moment())
   const [returnday,setReturnDay] = useState<Moment | null>(moment())
   const [observation,setObservation] = useState<string>("")
-
- 
-  console.log(typeof(departureday?.format('YYYY-MM-DD')), returnday?.format('YYYY-MM-DD'))
-
+  const [userData, setUserData] = useState<UserData[] >([])
+  const theme = useSelector(
+    (state: ReturnType<typeof store.getState>) => state.theme.activeTheme
+  );
 const submitFormDetails = (event:any) =>{
-
+  
   event.preventDefault()
   axios.post("http://localhost:3001/formdetails", {
     surname: surname,
@@ -46,17 +57,35 @@ const submitFormDetails = (event:any) =>{
     returnday: returnday?.format("YYYY-MM-DD"),
     departureday: departureday?.format('YYYY-MM-DD'),
     location:location,
-  }).then((response) => console.log(response),(error) => {console.log(error)})
-  
+    userID: window.localStorage.getItem("userID")
+    
+  }).then((response) => console.log(response),(error) => {console.log(error)}) 
+  setLocation("")
+  setSurname("")
+  setDepartureDay(moment())
+  setReturnDay(moment())
+  setName("")
+  setMeansOfTransportation("")
+  setObservation("")
+
 }
+
+useEffect(() =>{
+  axios.get("http://localhost:3001/getUsers")
+  .then((response) => setUserData(response.data))
+  .catch((error) => console.log(error))
+}, [])
+
+console.log(userData)
+const matches = useMediaQuery('(max-width:400px)')
   return (
-    <div className='containerFormDaysOff'>
-      <form className='formDaysOff' onSubmit={submitFormDetails}>
+    <div className={theme?"containerFormDaysOff":"containerFormDaysOff2"}>
+      <form className={theme?'formDaysOff':'formDaysOff2'} onSubmit={submitFormDetails}>
         
         <div className='bucket2Elements'>
         <div className='itemDaysOffForm'>
           <div style={{display:"flex"}}>
-        <AccountCircleIcon />
+        <AccountCircleIcon  style={{marginBottom:"0.4rem"}}/>
         <label htmlFor="nume">Nume:</label>
         </div>
         <input
@@ -71,7 +100,7 @@ const submitFormDetails = (event:any) =>{
         </div>
         <div className='itemDaysOffForm leftitem'>
           <div style={{display:"flex"}}>
-          <AccountCircleIcon />
+          <AccountCircleIcon style={{marginBottom:"0.4rem"}}/>
           <label htmlFor="prenume">Prenume:</label>
           </div>
        
@@ -88,7 +117,7 @@ const submitFormDetails = (event:any) =>{
         <div className='bucket2Elements'>
         <div className='itemDaysOffForm'>
           <div  style={{display:"flex"}}>
-            <GiteIcon/>
+            <GiteIcon style={{marginBottom:"0.4rem"}}/>
             <label htmlFor="locatie">Locație:</label>
           </div>
        
@@ -103,7 +132,7 @@ const submitFormDetails = (event:any) =>{
         </div>
         <div className='itemDaysOffForm leftitem'>
           <div style={{display:"flex"}}>
-            <DirectionsCarIcon/>
+            <DirectionsCarIcon style={{marginBottom:"0.4rem"}}/>
             <label htmlFor="transport">Mijloc de transport:</label>
           </div>
        
@@ -122,7 +151,7 @@ const submitFormDetails = (event:any) =>{
         <div className='bucket2Elements'>
         <div className='itemDaysOffForm'>
           <div style={{display:"flex"}}>
-            <ThumbUpOffAltIcon/>
+            <ThumbUpOffAltIcon style={{marginBottom:"0.4rem"}}/>
           <label> Zi plecare</label>
           </div>
       
@@ -133,7 +162,7 @@ const submitFormDetails = (event:any) =>{
         </div>
         <div className='itemDaysOffForm leftitem'>
           <div style={{display:"flex"}}>
-            <ThumbDownOffAltIcon/>
+            <ThumbDownOffAltIcon style={{marginBottom:"0.4rem"}}/>
           <label> Zi revenire</label>
 
           </div>
@@ -144,7 +173,7 @@ const submitFormDetails = (event:any) =>{
         </div>
         </div>
         <div className='buttontextarea'>
-        <textarea rows={8} cols={60} maxLength={75} name="observatie" onChange = {(event:React.ChangeEvent<HTMLTextAreaElement>) => setObservation(event.target.value)} placeholder='Observații: Număr de zile în plus, justificarea lor etc.'/>
+        <textarea rows={matches?10:6} style={{padding:"12px 20px",fontFamily:"serif",fontSize:"1rem"}} cols={matches?25:60} maxLength={75} name="observatie" onChange = {(event:React.ChangeEvent<HTMLTextAreaElement>) => setObservation(event.target.value)} placeholder='Observații: Număr de zile în plus, justificarea lor etc.'/>
         <ColorButton variant="contained" type="submit" size="large" style={{margin:"2rem 0rem"}}>
           Submit
         </ColorButton>

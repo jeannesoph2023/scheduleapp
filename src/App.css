@@ -9,7 +9,17 @@
   color: white;
   text-align: center; 
 }
-
+.containerHomePage2{
+  background-image: url('./assets/backgroundlight.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; 
+}
 .loginContainer, .registerContainer {
   background-image: url('./assets/registerbackground.jpeg');
   background-size: cover;
@@ -21,49 +31,169 @@
   color: white;
   text-align: center; 
 }
+.loginContainer2, .registerContainer2 {
+
+  background-image: url('./assets/backgroundlight.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; 
+}
 .formContainer{
-  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
-   height: auto;
-   width:90%;
-   max-width: 450px;
-   background-color: rgba(203, 203, 212, 0.864);
-   display:flex;
-   flex-direction: column;
-   align-items: center;
+ 
+    box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+    height: 70vh;
+    width: 30vw;
+    border-radius: 0.2rem;
+    background-color: rgba(203, 203, 212, 0.864);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: space-around; */
+}
+.triangleFormTitle{
+  display: flex;
+  background-color: #050D33;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 18vh;
+  width:100%;
+  position: relative;
+  border-radius:0.2rem
 }
 .formDetails{
   display:flex;
-   flex-direction: column;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.createAccoutTitle{
+ 
+  font-weight: 600;
+  font-size: 2rem;
+  position: relative
+}
+.triangle{
+
+  position: absolute; /* Position the triangle relative to the container */
+  top: 100%; /* Position the triangle at the bottom of the container */
+  left: 50%; /* Position the triangle in the middle horizontally */
+  transform: translateX(-50%); /* Center the triangle horizontally */
+  width: 0;
+  height: 0;
+  border-left: 0.5rem solid transparent;
+  border-right: 0.5rem solid transparent;
+  border-top: 1rem solid #050D33;
+  
+}
+
+.PasswordEmailContainer{
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 
 }
-.createAccoutTitle{
-  color: #000;
-  font-weight: 600;
-  font-size: 35px;
-  margin:50px 0px;
-}
-.PasswordEmailContainer{
-  margin-top: 35px;
-  display:flex;
-  flex-direction: column;
-}
 .navbar{
-  background-color:#08073b;
+  background-color: #050D33;;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
   font-size: 30px;
-  height: 8vh;
+  height: 13vh;
   display: flex;
   flex-direction: row-reverse;
-  justify-content: end;
+  justify-content: space-around;
   align-items: center;
+  border-bottom: 1px solid #82baf2;
+}
+.navbar2{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color:#548ABA;
+  font-size: 30px;
+  height: 13vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+  border-bottom: 1px solid #ebeae8;
+}
+.navbarButtons{
+  background-color:#08073b;
+  font-size: 30px;
+  height: 10vh;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+  /* border-bottom: 1px solid #82baf2; */
+}
+.navbar2Buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: center;
+
 }
 
 .itemNavbar{
-  color:aliceblue;
+  color: aliceblue;
   margin: 0px 25px;
   text-decoration: none;
+  background-color: #105BAB;
+  height: 5vh;
+  width: 8vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+.itemNavbar2{
+  
+    background-color: #050D33;
+    color: aliceblue;
+    margin: 0px 25px;
+    text-decoration: none;
+    width:8vw;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: 0.3rem;
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+
 }
 .itemNavbar:active{
-  color:rgb(167, 18, 147);
+ 
+  border: 2px solid ;
+  border-color:coral ;
+  background-color: #4152B1;
+ 
+}
+.itemNavbar2:active{
+ 
+  border: 2px solid ;
+  border-color:coral ;
+  background-color:  #030306;
+ 
+}
+.containerHomePage{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 .containerFormDaysOff{
   background-image: url('./assets/registerbackground.jpeg');
@@ -76,43 +206,142 @@
   color: white;
   text-align: center; 
 }
+.containerFormDaysOff2{
+  background-image: url('./assets/backgroundlight.jpeg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center; 
+}
 .formDaysOff{
   box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
-   height: 50vh;
-   width:70%;
-   max-width: 950px;
-   background-color: #08073b;
+   height: 75vh;
+   background-color:#050D33 ;
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: start;
+   padding:50px;
+}
+.formDaysOff2{
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+   height: 75vh;
+   background-color: #050D33;
    display:flex;
    flex-direction: column;
    justify-content: start;
    align-items: start;
    padding:50px;
 }
-
+input {
+   
+   height:5.5vh;
+}
 .dataPicker{
   background-color: white;
-  width:18vw;
+
 }
-input[type=text] {
-  border: none;
-  border-bottom: 2px solid rgb(95, 188, 238);
-  width:18vw;
-  height:4vh;
-  color:#000
-}
+
 .itemDaysOffForm{
   display:flex;
   flex-direction: column;
-  margin: 1rem;
+  margin: 0.5rem;
+  width:15rem;
  
 
 }
+.homeTitle{
+  font-size: 3rem;
+  margin-right:2rem;
+  color:#000
+}
+.homeTitle, .homeTitleDark.rainbow-text {
+  /* Create a conic gradient. */
+  /* Double percentages to avoid blur (#000 10%, #fff 10%, #fff 20%, ...). */
+  background: #CA4246;
+  background-color: #CA4246;
+  background: conic-gradient(
+    #CA4246 16.666%, 
+    #E16541 16.666%, 
+    #E16541 33.333%, 
+    #F18F43 33.333%, 
+    #F18F43 50%, 
+    #8B9862 50%, 
+    #8B9862 66.666%, 
+    #19243d 66.666%, 
+    #0a0a0a 83.333%, 
+    #A7489B 83.333%);
+  
+  /* Set thee background size and repeat properties. */
+  background-size: 57%;
+  background-repeat: repeat;
+  
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  
+  /* Animate the text when loading the element. */
+  /* This animates it on page load and when hovering out. */
+  animation: rainbow-text-animation-rev 0.5s ease forwards;
+
+  cursor: pointer;
+}
+
+/* Add animation on hover. */
+.rainbow-text:hover {
+  animation: rainbow-text-animation 0.5s ease forwards;
+}
+
+/* Move the background and make it larger. */
+/* Animation shown when hovering over the text. */
+@keyframes rainbow-text-animation {
+  0% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+}
+
+/* Move the background and make it smaller. */
+/* Animation shown when entering the page and after the hover animation. */
+@keyframes rainbow-text-animation-rev {
+  0% {
+    background-size: 300%;
+    background-position: -9em 1em;
+  }
+  20% {
+    background-size: 57%;
+    background-position: 0 1em;
+  }
+  100% {
+    background-size: 57%;
+    background-position: 0 0;
+  }
+}
+.homeTitleDark{
+  font-size: 3rem;
+  margin-right:2rem;
+  color:#f5f3f3
+}
 label{
-  margin-bottom: 0.8rem;
-  margin-left: 1rem;
+  margin-top: 0.4rem;
+  margin-left: 0.6rem;
   align-self: start;
   letter-spacing: 3px;
   font-weight: bold;
+  font-size: 0.7rem;
 }
 .bucket2Elements{
    display: flex;
@@ -130,6 +359,8 @@ label{
   margin-left: 4.5rem;
 }
 
+
+
 @media screen and (max-width: 600px){
   
   .formContainer{
@@ -144,13 +375,14 @@ label{
   .navbar{
     background-color:#040f38;
     font-size: 10px;
-    height: 8vh;
+    height: 14vh;
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
 
   }
+  
   .itemNavbar{
 
     margin: 2px 0px;
@@ -162,7 +394,7 @@ label{
   }
   .navbar{
     font-size: 15px;
-    height:10vh;
+    height:14vh;
   }
   .PasswordEmailContainer{
     margin-top: 10px;
@@ -170,5 +402,117 @@ label{
   }
 
  
+
+}
+.error{
+  font-weight: bold;
+  color: #000;
+  margin-bottom:0.5rem;
+  margin-top:1rem;
+  font-size:0.7rem
+
+}
+@media screen and (max-width: 400px){
+  .formContainer {
+    box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+  
+    width: 75%;
+    /* min-width: 250px; */
+    height: 90vh;
+    overflow: auto;
+    background-color: rgba(203, 203, 212, 0.864);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+.navbar2 {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  background-color: #548ABA;
+  font-size: 0.5rem;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ebeae8;
+  padding:0.5rem;
+}
+.navbar{
+  background-color: #050D33;;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  font-size: 0.5rem;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #82baf2;
+  padding:0.5rem;
+ 
+}
+
+.itemNavbar2 {
+  background-color: #030306;
+  color: aliceblue;
+  margin: 0px 25px;
+  text-decoration: none;
+  width: 30vw;
+  height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.3rem;
+  text-align: center;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+.homeTitle{
+  font-size: 2rem;
+  margin-right:1rem;
+  color:#000
+}
+.triangle {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 0.3rem solid transparent;
+  border-right: 0.3rem solid transparent;
+  border-top: 0.5rem solid #050D33;
+}
+.PasswordEmailContainer{
+  margin-top: 30px;
+}
+.buttontextarea {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.2rem;
+}
+.leftitem {
+  margin-left: 0
+}
+.bucket2Elements {
+  display: flex;
+  flex-direction: column;
+}
+
+.formDaysOff2 {
+  box-shadow: 0 60px 80px rgba(0,0,0,0.60), 0 45px 26px rgba(0,0,0,0.14);
+  height: 75vh;
+  height: auto;
+  max-width: 300px;
+  background-color: #050D33;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  padding: 50px;
+}
 
 }
